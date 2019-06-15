@@ -1,50 +1,79 @@
 * {
-            box-sizing: border-box;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            padding-top: 50px;
-        }
-        .container {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-        .btn {
-            margin: 5px 0;
-            font-size: 15px;
-            padding: 5px 5px;
-            background-color: transparent;
-            border: 1px solid #000;
-            user-select: none;
-            cursor: pointer;
-        }
-        .mixers {
-            width: 250px;
-            height: 220px;
-            border: 1px solid #000;
-            border-radius: 5px;
-        }
-        .mixer {
-            width: 100px;
-            height: 100px;
-            line-height: 100px;
-            text-align: center;
-            border: 1px solid #000;
-            border-radius: 50%;
-        }
-        .elementCard {
-            padding: 0;
-            width: 60px;
-            height: 60px;
-            text-align: center;
-            border-radius: 3px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            vertical-align: middle;
-        }
-        .buttons {
-            text-align: center;
-        }
+    box-sizing: border-box;
+    transition: all 0.1s ease-in-out;
+}
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 50px;
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.btn {
+    margin: 5px 0;
+    font-size: 15px;
+    padding: 5px 5px;
+    background-color: transparent;
+    border: 1px solid #000;
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+.btn:hover {
+    background-color: #2e2e2e;
+    color: #fff;
+}
+.mixers {
+    width: 270px;
+    height: 240px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+}
+.mixer {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+.elementCard {
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+.buttons {
+    text-align: center;
+}
+.right {
+    border-color: green;
+}
+.wrong {
+    border-color: red;
+}
+.earth {
+    background: url("../img/icons.jpg");
+    background-position: -75px -75px;
+}
+.fire {
+    background: url("../img/icons.jpg");
+    background-position: -14px -4px;
+}
+.water {
+    background: url("../img/icons.jpg");
+    background-position: -75px -4px;
+}
+.air {
+    background: url("../img/icons.jpg");
+    background-position: -15px -75px;
+}

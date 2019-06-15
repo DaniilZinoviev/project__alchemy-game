@@ -1,9 +1,10 @@
 // DOM Variables
 const panel = document.querySelector(".panel"),
 	mixers = document.querySelectorAll(".mixer"),
+	mixerContainer = document.querySelector(".mixers"),
 	combineBtn = document.getElementById("combineBtn"),
 	clearBtn = document.getElementById("clearBtn")
-	;
+;
 
 // Data for combination
 let combines = {
@@ -44,7 +45,7 @@ class Element {
 	renderCard(where) {
 		this._card = document.createElement("div");
 
-		this._card.className = "btn elementCard";
+		this._card.className = "btn elementCard " + this._name;
 		this._card.setAttribute("draggable", "true");
 		this._card.innerHTML = this._name;
 		this._card.addEventListener("dragstart", function () {
@@ -84,16 +85,44 @@ combineBtn.onclick = function () {
 
 	let result = elem1.combine(elem2);
 
-	if (elem1.isCombine(elem2)) {
+	if (elem1.isCombine(elem2) && !elements[result]) {
 		elements[result] = new Element(result);
-		console.log("created")
+		rightCouple();
+	} else {
+		wrongCouple();
 	}
 
 	clear();
 }
 function clear() {
-	mixers.forEach(mixer => mixer.innerHTML = "");
+	mixers.forEach(mixer => {
+		mixer.innerHTML = "";
+	});
 	dragDrop.couple = [];
+}
+function rightCouple() {
+	mixerContainer.style.borderColor = "green";
+	mixers.forEach(function(mixer) {
+		mixer.style.borderColor = "green";
+	});
+	setTimeout(function() {
+		mixerContainer.style.borderColor = "";
+		mixers.forEach(function(mixer) {
+		mixer.style.borderColor = "";
+		});
+	}, 1000);
+}
+function wrongCouple() {
+	mixerContainer.style.borderColor = "red";
+	mixers.forEach(function(mixer) {
+		mixer.style.borderColor = "red";
+	});
+	setTimeout(function() {
+		mixerContainer.style.borderColor = "";
+		mixers.forEach(function(mixer) {
+		mixer.style.borderColor = "";
+		});
+	}, 1000);
 }
 
 
